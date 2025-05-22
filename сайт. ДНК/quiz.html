@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДНК — Вікторина</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #d5ecfe;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #aed0f6;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      color: #003366;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      background-color: #84b8ea;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #003366;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2a6fa4;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question p {
+      font-weight: bold;
+    }
+
+    .question label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    button[type="submit"] {
+      background-color: #2a6fa4;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #1d4f7a;
+      transform: scale(1.05);
+    }
+
+    #results {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #f0f8ff;
+      border-left: 5px solid #2a6fa4;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Вікторина про ДНК</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="books.html">Книги про ДНК</a>
+    <a href="quiz.html">Вікторина</a>
+  </nav>
+
+  <main>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Що таке ДНК?</p>
+        <label><input type="radio" name="q1" value="a"> Дихальна система</label>
+        <label><input type="radio" name="q1" value="b"> Генетичний матеріал</label>
+        <label><input type="radio" name="q1" value="c"> Тип білка</label>
+      </div>
+
+      <div class="question">
+        <p>2. Скільки нуклеотидів у ДНК?</p>
+        <label><input type="radio" name="q2" value="a"> Три</label>
+        <label><input type="radio" name="q2" value="b"> П'ять</label>
+        <label><input type="radio" name="q2" value="c"> Чотири</label>
+      </div>
+
+      <div class="question">
+        <p>3. Який цукор є частиною ДНК?</p>
+        <label><input type="radio" name="q3" value="a"> Рибоза</label>
+        <label><input type="radio" name="q3" value="b"> Глюкоза</label>
+        <label><input type="radio" name="q3" value="c"> Дезоксирибоза</label>
+      </div>
+
+      <div class="question">
+        <p>4. Хто відкрив структуру ДНК?</p>
+        <label><input type="radio" name="q4" value="a"> Ньютон і Галілей</label>
+        <label><input type="radio" name="q4" value="b"> Вотсон і Крік</label>
+        <label><input type="radio" name="q4" value="c"> Мендель і Дарвін</label>
+      </div>
+
+      <div class="question">
+        <p>5. Де міститься ДНК у клітині?</p>
+        <label><input type="radio" name="q5" value="a"> У ядрі</label>
+        <label><input type="radio" name="q5" value="b"> У мембрані</label>
+        <label><input type="radio" name="q5" value="c"> У рибосомах</label>
+      </div>
+
+      <div class="question">
+        <p>6. Яка пара основ не є правильною?</p>
+        <label><input type="radio" name="q6" value="a"> A - T</label>
+        <label><input type="radio" name="q6" value="b"> G - C</label>
+        <label><input type="radio" name="q6" value="c"> A - G</label>
+      </div>
+
+      <div class="question">
+        <p>7. Скільки ланцюгів має молекула ДНК?</p>
+        <label><input type="radio" name="q7" value="a"> Один</label>
+        <label><input type="radio" name="q7" value="b"> Два</label>
+        <label><input type="radio" name="q7" value="c"> Три</label>
+      </div>
+
+      <div class="question">
+        <p>8. ДНК відповідає за:</p>
+        <label><input type="radio" name="q8" value="a"> Синтез білків</label>
+        <label><input type="radio" name="q8" value="b"> Транспорт кисню</label>
+        <label><input type="radio" name="q8" value="c"> Травлення</label>
+      </div>
+
+      <div class="question">
+        <p>9. Який тип зв'язку з'єднує основи ДНК?</p>
+        <label><input type="radio" name="q9" value="a"> Ковалентний</label>
+        <label><input type="radio" name="q9" value="b"> Водневий</label>
+        <label><input type="radio" name="q9" value="c"> Іонний</label>
+      </div>
+
+      <div class="question">
+        <p>10. Чим відрізняється ДНК від РНК?</p>
+        <label><input type="radio" name="q10" value="a"> Містить урацил</label>
+        <label><input type="radio" name="q10" value="b"> Містить дезоксирибозу</label>
+        <label><input type="radio" name="q10" value="c"> Є однонитковою</label>
+      </div>
+
+      <div class="question">
+        <p>11. Яка основа є тільки в ДНК?</p>
+        <label><input type="radio" name="q11" value="a"> Тимін</label>
+        <label><input type="radio" name="q11" value="b"> Урацил</label>
+        <label><input type="radio" name="q11" value="c"> Аденін</label>
+      </div>
+
+      <div class="question">
+        <p>12. Яка форма молекули ДНК?</p>
+        <label><input type="radio" name="q12" value="a"> Трикутна</label>
+        <label><input type="radio" name="q12" value="b"> Кільцева</label>
+        <label><input type="radio" name="q12" value="c"> Подвійна спіраль</label>
+      </div>
+
+      <button type="submit">Завершити</button>
+    </form>
+
+    <div id="results"></div>
+  </main>
+
+  <script>
+    const answers = {
+      q1: 'b',
+      q2: 'c',
+      q3: 'c',
+      q4: 'b',
+      q5: 'a',
+      q6: 'c',
+      q7: 'b',
+      q8: 'a',
+      q9: 'b',
+      q10: 'b',
+      q11: 'a',
+      q12: 'c'
+    };
+
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      let score = 0;
+      let resultHTML = '<h2>Результати:</h2>';
+
+      for (let i = 1; i <= 12; i++) {
+        const q = 'q' + i;
+        const selected = document.querySelector('input[name="' + q + '"]:checked');
+
+        if (!selected) {
+          resultHTML += `<p>${i}. Питання не відповіли.</p>`;
+          continue;
+        }
+
+        const isCorrect = selected.value === answers[q];
+        if (isCorrect) score++;
+
+        resultHTML += `<p>${i}. ${isCorrect ? '<span class="correct">Правильно</span>' : '<span class="incorrect">Неправильно</span>'}`;
+        if (!isCorrect) {
+          resultHTML += ` — правильна відповідь: ${answers[q].toUpperCase()}`;
+        }
+        resultHTML += '</p>';
+      }
+
+      resultHTML += `<h3>Ваш результат: ${score} з 12</h3>`;
+      document.getElementById('results').innerHTML = resultHTML;
+    });
+  </script>
+</body>
+</html>
+
+
+

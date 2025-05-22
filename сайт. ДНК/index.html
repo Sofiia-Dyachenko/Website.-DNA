@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ДНК — Головна</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #d5ecfe;
+      color: #333;
+    }
+
+    header {
+      background-color: #aed0f6;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+  margin: 0;
+  font-size: 3em; /* Збільшення шрифту */
+  color: #003366; /* Змінений колір тексту для більшої контрастності */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Тінь для тексту */
+  animation: fadeIn 1s ease-in-out; /* Додавання анімації */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    nav {
+      background-color: #84b8ea;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #003366;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    .slider-container {
+      overflow: hidden;
+      border: 2px solid #aed0f6;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .slide h2 {
+      color: #2a6fa4;
+      font-size: 1.8em;
+      border-bottom: 2px solid #aed0f6;
+      padding-bottom: 5px;
+      margin-top: 0;
+    }
+
+    .slide p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      color: #2a6fa4;
+      background-color: #ffffffcc;
+      border: 2px solid #aed0f6;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 36px;
+      cursor: pointer;
+      user-select: none;
+      z-index: 100;
+    }
+
+    .arrow.left {
+      left: -50px;
+    }
+
+    .arrow.right {
+      right: -50px;
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 6px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: #2a6fa4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #aed0f6;
+      margin-top: 40px;
+    }
+    /* Hover-ефекти для стрілок */
+.arrow:hover,
+.carousel-btn:hover {
+  color: #ffffff;
+  background-color: #2a6fa4;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Анімація при появі в полі зору */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ВСЕ ПРО ДНК</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="books.html">Книги про ДНК</a>
+    <a href="quiz.html">Вікторина</a>
+  </nav>
+
+  <main>
+    <div class="slider-wrapper">
+      <div class="arrow left" onclick="prevSlide()">&#8592;</div>
+      <div class="arrow right" onclick="nextSlide()">&#8594;</div>
+
+      <div class="slider-container">
+        <div class="slider-track" id="slider">
+          <section class="slide animated-scroll">
+            <h2>Що таке ДНК</h2>
+            <p>
+              ДНК (дезоксирибонуклеїнова кислота) — це надзвичайно важлива молекула, що містить генетичні інструкції для створення і підтримки життя. Вона складається з чотирьох типів нуклеотидів, які впорядковані у певній послідовності, утворюючи генетичний код.
+            </p>
+            <p>
+              ДНК зберігається в ядрі кожної клітини, а під час поділу клітини — копіюється, щоб передати інформацію новим клітинам.
+            </p>
+          </section>
+
+          <section class="slide animated-scroll">
+            <h2>Історія відкриття ДНК</h2>
+            <p>
+              Вперше ДНК була виявлена Фрідріхом Мішером у 1869 році. Проте її функції довго залишались невідомими.
+            </p>
+            <p>
+              У 1953 році Джеймс Ватсон і Френсіс Крик, використовуючи дані Розалінд Франклін, створили модель подвійної спіралі ДНК. Це стало основою для розвитку сучасної генетики.
+            </p>
+          </section>
+
+          <section class="slide animated-scroll">
+            <h2>Чому ДНК важлива</h2>
+            <p>
+              ДНК — це інструкція з побудови живого організму. Вона керує утворенням білків, обміном речовин та передачею спадкової інформації.
+            </p>
+            <p>
+              Вивчення ДНК дозволяє розуміти причини хвороб, створювати ліки та досліджувати еволюцію.
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <div class="dots" id="dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+      </div>
+    </div>
+  </main>
+  <section id="video-carousel" class="animated-scroll" style="text-align: center; margin: 3em 0;">
+
+    <h2 style="color: #2a6fa4;">Відео на тему ДНК</h2>
+    <div class="carousel-container" style="position: relative; max-width: 600px; margin: auto;">
+        <button class="carousel-btn prev" onclick="prevVideo()">&#10094;</button>
+        <div id="video-wrapper" style="overflow: hidden;">
+            <div class="videos" style="display: flex; transition: transform 0.5s ease;">
+                <!-- Відео 1 -->
+                <div style="min-width: 100%;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Iv9t1wmDE9k?si=kvHmTjNK18PqK2TI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <!-- Відео 2 -->
+                <div style="min-width: 100%;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LeaJtedo4j4?si=zj6r3un-M4GKHg1C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <!-- Відео 3 -->
+                <div style="min-width: 100%;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Y6CHtV3YAmU?si=ytF60aunHwi_gw0_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn next" onclick="nextVideo()">&#10095;</button>
+    </div>
+</section>
+<style>
+    .carousel-container {
+        position: relative;
+    }
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #206ba3;
+        border: none;
+        color: #ffffff;
+        padding: 0.5em;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    .carousel-btn.prev {
+        left: 0;
+    }
+    .carousel-btn.next {
+        right: 0;
+    }
+    .carousel-btn:hover {
+        background-color: #f9a826;
+    }
+    .videos {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let currentIndex = 0;
+        const videos = document.querySelector('.videos');
+        const totalVideos = videos.children.length;
+
+        function showVideo(index) {
+            // Додатковий захист від виходу за межі
+            if (index < 0) index = totalVideos - 1;
+            if (index >= totalVideos) index = 0;
+            currentIndex = index;
+            videos.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function prevVideo() {
+            currentIndex = (currentIndex - 1 + totalVideos) % totalVideos;
+            showVideo(currentIndex);
+        }
+
+        function nextVideo() {
+            currentIndex = (currentIndex + 1) % totalVideos;
+            showVideo(currentIndex);
+        }
+
+        // Ініціалізація каруселі
+        document.querySelector('.prev').addEventListener('click', prevVideo);
+        document.querySelector('.next').addEventListener('click', nextVideo);
+    });
+</script>
+<section id="dna-facts" class="fade-up" style="max-width: 800px; margin: 4em auto; padding: 20px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center;">
+  <h2 style="color: #2a6fa4;">Цікаві факти про ДНК</h2>
+  <ul style="text-align: left; font-size: 1.1em; line-height: 1.6;">
+    <li>Якщо розтягнути всю ДНК з однієї клітини, її довжина сягне понад 2 метри.</li>
+    <li>У кожної людини понад 99,9% ДНК ідентичні.</li>
+    <li>ДНК може зберігатися тисячі років у сприятливих умовах.</li>
+    <li>Молекула ДНК постійно самовідновлюється — це ключ до життя.</li>
+  </ul>
+</section>
+
+
+  <footer>
+
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slider = document.getElementById("slider");
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function updateSlider() {
+      const offset = -currentSlide * 100;
+      slider.style.transform = `translateX(${offset}%)`;
+      updateDots();
+    }
+
+    function updateDots() {
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlider();
+    }
+  </script>
+  <script>
+    // Анімація появи блоку з фактами при прокрутці
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-up');
+  
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+  
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+  
+</body>
+</html>
+
+

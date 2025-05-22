@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Книги про ДНК</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #d5ecfe;
+      color: #333;
+    }
+
+    header {
+      background-color: #aed0f6;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      color: #003366;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      background-color: #84b8ea;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #003366;
+    }
+
+    .book-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .book {
+      display: flex;
+      background-color: #fff;
+      border: 2px solid #aed0f6;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .book:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .book img {
+      width: 200px;
+      object-fit: cover;
+    }
+
+    .book-info {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .book-info h2 {
+      margin-top: 0;
+      color: #2a6fa4;
+      font-size: 1.5em;
+    }
+
+    .author {
+      font-size: 0.95em;
+      color: #555;
+      font-weight: normal;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
+
+    .book-info p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .book-info a {
+      color: #206ba3;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .book-info a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Книги про ДНК</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="books.html">Книги про ДНК</a>
+    <a href="quiz.html">Вікторина</a>
+  </nav>
+
+  <main class="book-container">
+    <div class="book">
+      <img src="book1.png" alt="Обкладинка книги ДНК Жадан, Фоззі, Кідрук">
+      <div class="book-info">
+        <h2>«ДНК»</h2>
+        <p class="author">Сергій Жадан, Фоззі, Макс Кідрук</p>
+        <p>У не дуже віддаленому майбутньому звичайний український студент Андрій Чумак стає піддослідним у науковому експерименті: розшифровка генетичного коду дає змогу особисто пережити найяскравіші моменти з життя предків...</p>
+        <p><a href="https://nashformat.ua/products/dnk-703805?srsltid=AfmBOoo3GRxqPRRoMcYjkJOSbSgObAo1-5gwgtmDCiF17N-HAtncxREi" target="_blank">Читати більше</a></p>
+      </div>
+    </div>
+
+    <div class="book">
+      <img src="book2.png" alt="Обкладинка книги Зламати ДНК">
+      <div class="book-info">
+        <h2>«Зламати ДНК. Редагування генома та контроль над еволюцією»</h2>
+        <p class="author">Дженніфер Дудна, Семюель Стернберг</p>
+        <p>Кожної секунди людина зазнає приблизно мільйон різноманітних мутацій. А що як науковцям удалося взяти контроль над небезпечними змінами в організмі?..</p>
+        <p><a href="https://nashformat.ua/products/zlamaty-dnk.-redaguvannya-genoma-ta-kontrol-nad-evolyutsieyu-709272?srsltid=AfmBOopypukDzPPOZCa5PJvHeR08gon5oyLYfJsrDUyy_Ar_hwm2ujkc" target="_blank">Читати більше</a></p>
+      </div>
+    </div>
+
+    <div class="book">
+      <img src="book3.png" alt="Обкладинка книги Ген">
+      <div class="book-info">
+        <h2>«Ген. Надзвичайна історія»</h2>
+        <p class="author">Сіддгартха Мукерджі</p>
+        <p>Вражаюча розповідь про найважливішу науку сучасності — генетику. Справжня біографія генів від знаменитого фахівця з біології Сіддгартха Мукерджі...</p>
+        <p><a href="https://nashformat.ua/products/gen.-nadzvychajna-istoriya-707356?srsltid=AfmBOopxSVifF2NbYDtuJ8Kq--CcJpIZg6kyPIcWZcUPQfDJxbuFLbTr" target="_blank">Читати більше</a></p>
+      </div>
+    </div>
+
+    <div class="book">
+      <img src="book4.png" alt="Обкладинка книги Код життя">
+      <div class="book-info">
+        <h2>«Хто ми такі? Походження людини крізь призму ДНК»</h2>
+        <p class="author">Девід Райх</p>
+        <p>Історія науки показує, як небезпечно бути переконаним у тому, що знаєш істину... Генетик Девід Райх переконаний: геномна революція стрімко ламає наші уявлення про минуле...</p>
+        <p><a href="https://nashformat.ua/products/hto-my-taki-pohodzhennya-lyudyny-kriz-pryzmu-dnk-709199?srsltid=AfmBOoqB4VafY7SvmADFIXI270jAx-kGW2OInNHr3KUtrKUufOHK0Sl4" target="_blank">Читати більше</a></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
